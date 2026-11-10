@@ -1,0 +1,4 @@
+# never commit the private key or store ZIPs (the first-upload ZIP contains key.pem)
+*.pem
+*.zip
+*.crx

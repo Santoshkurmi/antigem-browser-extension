@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "AntiGem Browser Bridge",
+  "short_name": "AntiGem",
+  "version": "0.1.0",
+  "description": "Lets your AntiGem agents in VS Code use this browser: only in the AntiGem tab group, and only after you allow other tabs.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzpSbwI37hyGcBXbU0t2mSMp/Z9iF9qX1jrw6sxJEoOwBNs4Xhr06LPY5Tr6A4Puxe69+LiZEG5PW8ONHEp2xD+AALmEuG6yeoxVsEDDB3hWicf7yjkB9/a0BiUsY/1pQeWxHwBF8ImKfuniWBkh+C+IdGrzraiIfMB+7q1UwN3RI7ueJuOvHrbXMmBry6xpRIxk0CSIgt54vusoXJwXRBwhmu0KNl0D8wr+82NO7cX4zalsaozWNFWalIvlXIDMhJ1fDuGcgNWSad2MnfIn2zxt4XsVTXvNam70P9DV6vcOqiw6jYJM6OhU7dgVq62dfXG03eV8Z3lRGyFTJGHuVawIDAQAB",
+  "minimum_chrome_version": "120",
+  "permissions": [
+    "nativeMessaging",
+    "tabs",
+    "tabGroups",
+    "scripting",
+    "debugger",
+    "storage",
+    "alarms"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "AntiGem",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "128": "icons/icon128.png"
+  }
+}

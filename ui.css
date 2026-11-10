@@ -1,0 +1,21 @@
+:root { color-scheme: light dark; --bg: #ffffff; --fg: #1f1f1f; --muted: #666; --line: #e3e3e3; --card: #f6f6f6; --accent: #D97757; --ok: #1e8e3e; --warn: #b26a00; --err: #c5221f; }
+@media (prefers-color-scheme: dark) { :root { --bg: #1f1f1f; --fg: #ececec; --muted: #9a9a9a; --line: #333; --card: #2a2a2a; --ok: #6dd58c; --warn: #ffb74d; --err: #f28b82; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 13px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+h1 { font-size: 15px; margin: 0; display: flex; align-items: center; gap: 8px; }
+h1 img { width: 20px; height: 20px; }
+h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 14px 0 6px; }
+.muted { color: var(--muted); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+.row { display: flex; align-items: center; gap: 8px; }
+.dot { width: 9px; height: 9px; border-radius: 50%; flex: none; background: var(--muted); }
+.dot.ok { background: var(--ok); } .dot.warn { background: var(--warn); } .dot.err { background: var(--err); }
+button { font: inherit; border: 1px solid var(--line); background: var(--card); color: var(--fg); padding: 5px 12px; border-radius: 8px; cursor: pointer; }
+button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+button:hover { filter: brightness(1.05); }
+textarea { width: 100%; font: 12px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 8px; padding: 6px 8px; resize: vertical; }
+code { font: 11.5px ui-monospace, SFMono-Regular, Menlo, monospace; word-break: break-all; }
+ul.tabs { list-style: none; margin: 0; padding: 0; }
+ul.tabs li { padding: 5px 0; border-bottom: 1px solid var(--line); cursor: pointer; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+ul.tabs li:last-child { border-bottom: 0; }
+.actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 8px; flex-wrap: wrap; }

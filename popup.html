@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AntiGem</title>
+<link rel="stylesheet" href="ui.css">
+<style> body { width: 360px; padding: 12px 14px 14px; } </style>
+</head>
+<body>
+<h1><img src="icons/icon128.png" alt="">AntiGem Browser Bridge</h1>
+<div class="card" style="margin-top:10px">
+  <div class="row"><span id="dot" class="dot"></span><strong id="status">…</strong></div>
+  <div id="detail" class="muted" style="margin-top:4px"></div>
+  <div class="actions"><button id="toggle">Disconnect</button></div>
+</div>
+
+<h2>AntiGem tab group</h2>
+<div class="card">
+  <div id="tabsInfo" class="muted">Agents only use tabs in the “AntiGem” group (tabs they open go there; drag a tab in to share it, out to take it back). Any other tab needs your OK first.</div>
+  <ul id="tabs" class="tabs"></ul>
+  <div class="actions"><button id="release" title="Unlock every tab and stop debugging them">Release all tabs</button></div>
+</div>
+
+<h2>Blocklist</h2>
+<div class="card">
+  <div class="muted" style="margin-bottom:6px">Agents can never open, read or control these sites (one per line; a domain covers its subdomains; <code>file://</code> = local files).</div>
+  <textarea id="blocklist" rows="7" spellcheck="false"></textarea>
+  <div class="actions"><button id="reset">Defaults</button><button id="save" class="primary">Save</button></div>
+</div>
+
+<div class="muted" style="margin-top:10px">ID <code id="extId"></code> · v<span id="version"></span></div>
+<script src="popup.js"></script>
+</body>
+</html>
