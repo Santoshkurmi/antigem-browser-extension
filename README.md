@@ -7,7 +7,8 @@ network logs, handle dialogs and upload files.
 It is the browser half of AntiGem's built-in **Browser** MCP server. It also powers AntiGem plugins that use the
 browser (for example Google Flow).
 
-It works only together with the AntiGem VS Code extension. On its own it does nothing.
+It works only together with [AntiGem for VS Code](https://github.com/Santoshkurmi/antigem_vscode_extension). On its own it does nothing.
+The [AntiGem Android app](https://github.com/Santoshkurmi/antigem) does not need it: the app has its own built-in browser that agents control.
 
 - Extension ID: `kbdjcdlfeoijcchepbldpldeaeijgibi`
 - Works in: Chrome, Chromium, Brave and Edge (version 120 or newer), on Linux and macOS. Windows is not supported yet.
@@ -16,7 +17,11 @@ It works only together with the AntiGem VS Code extension. On its own it does no
 
 ## Install
 
-You need AntiGem for VS Code installed first. The VS Code extension carries these files and sets up the connection.
+You need AntiGem for VS Code installed first ([VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=santoshkurmi.antigem-vscode-extension) · [Open VSX](https://open-vsx.org/extension/santoshkurmi/antigem-vscode-extension)). The VS Code
+extension carries these files and sets up the connection.
+
+This extension is not in the Chrome Web Store yet (it is not published or verified there), so Chrome installs it with
+*Load unpacked*, as below.
 
 1. **Copy the extension.** In VS Code, open AntiGem → **Settings → Browser** → **Open the extension folder**. This
    copies the extension to `~/.antigem/chrome-extension` and opens that folder. The folder stays put when AntiGem
@@ -146,6 +151,16 @@ There is no build step: the folder is the extension.
 
 - **Chrome Web Store:** upload a ZIP of this folder. If the store assigns its own ID, remove `key` from
   `manifest.json`, then put the new ID in the VS Code extension's `src/core/browser/constants.ts`.
+
+## Related projects
+
+AntiGem comes in three parts that link to each other:
+
+| Project | What it is | Repository |
+|---|---|---|
+| **AntiGem** (Android app) | The coding agents, a Linux terminal, an editor and a browser on your phone. With **Connect to PC** it also uses the agents of a PC that runs AntiGem for VS Code. | [Santoshkurmi/antigem](https://github.com/Santoshkurmi/antigem) |
+| **AntiGem for VS Code** | The same agents and chat in a VS Code sidebar. Its **Connect phone** lets the app on your phone use them. | [Santoshkurmi/antigem_vscode_extension](https://github.com/Santoshkurmi/antigem_vscode_extension) · install: [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=santoshkurmi.antigem-vscode-extension), [Open VSX](https://open-vsx.org/extension/santoshkurmi/antigem-vscode-extension) |
+| **AntiGem Browser Bridge** (Chrome extension) | Lets agents in AntiGem for VS Code use your real Chrome. Not needed by the Android app, which has its own browser. | [Santoshkurmi/antigem-browser-extension](https://github.com/Santoshkurmi/antigem-browser-extension) · not in the Chrome Web Store yet: installed with *Load unpacked* from AntiGem for VS Code |
 
 ## License
 
